@@ -1,0 +1,12 @@
+.courses-public-page { min-height: 100vh; }
+.courses-hero {
+  padding: 120px 24px 40px; text-align: center;
+  background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);
+}
+.courses-hero h1 { font-size: 2rem; margin-bottom: 8px; }
+.courses-hero p { color: var(--text-secondary); font-size: 1rem; }
+.courses-body { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+.courses-filters { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+@media (max-width: 768px) {
+  .courses-grid { grid-template-columns: 1fr !important; }
+}

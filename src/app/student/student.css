@@ -1,0 +1,140 @@
+/* ===== Dashboard Layout (Student & Admin) ===== */
+.dashboard-layout { display: flex; min-height: 100vh; }
+
+.sidebar-overlay {
+  position: fixed; inset: 0; background: var(--overlay);
+  z-index: 99; display: none;
+}
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+
+.sidebar-user {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px; border-radius: var(--radius-md);
+  background: var(--bg-tertiary); margin-top: 12px;
+}
+.sidebar-user-name { font-size: 0.85rem; font-weight: 600; }
+.sidebar-user-role { font-size: 0.75rem; color: var(--text-muted); }
+.sidebar-user-info { overflow: hidden; }
+.sidebar-user-info p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.mobile-header {
+  display: none; align-items: center; justify-content: space-between;
+  padding: 12px 0; margin-bottom: 16px;
+}
+.mobile-header .mobile-toggle {
+  display: flex; font-size: 1.5rem; background: none; border: none;
+  color: var(--text-primary); cursor: pointer;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  background: var(--accent-gradient);
+  border-radius: var(--radius-xl); padding: 32px;
+  color: #fff; margin-bottom: 28px; position: relative; overflow: hidden;
+}
+.welcome-banner::before {
+  content: ''; position: absolute; top: -50%; right: -20%;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+.welcome-banner h1 { font-size: 1.5rem; margin-bottom: 6px; position: relative; z-index: 1; }
+.welcome-banner p { opacity: 0.85; font-size: 0.9rem; position: relative; z-index: 1; }
+
+/* Quick Stats Row */
+.quick-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+
+/* Course Cards */
+.course-list-card {
+  background: var(--bg-secondary); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all var(--transition-base);
+}
+.course-list-card:hover { transform: translateY(-2px); box-shadow: var(--glass-shadow); }
+.course-list-header {
+  padding: 20px; display: flex; gap: 16px; align-items: flex-start;
+}
+.course-list-emoji { font-size: 2rem; }
+.course-list-info { flex: 1; }
+.course-list-info h3 { font-size: 1rem; margin-bottom: 4px; }
+.course-list-info p { font-size: 0.82rem; color: var(--text-secondary); }
+.course-list-footer {
+  padding: 12px 20px; background: var(--bg-tertiary);
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Class List */
+.class-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 20px; border-bottom: 1px solid var(--border-color);
+  transition: background var(--transition-fast);
+}
+.class-item:hover { background: var(--card-hover); }
+.class-item:last-child { border-bottom: none; }
+.class-day {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  background: var(--accent-primary-light); color: var(--accent-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+}
+.class-day.completed { background: var(--success-light); color: var(--success); }
+.class-info { flex: 1; }
+.class-info h4 { font-size: 0.9rem; margin-bottom: 2px; }
+.class-info p { font-size: 0.78rem; color: var(--text-secondary); }
+
+/* Video Player */
+.video-container {
+  position: relative; padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: #000; margin-bottom: 24px;
+}
+.video-container iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+}
+
+/* Attendance Calendar */
+.attendance-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+}
+.attendance-day {
+  aspect-ratio: 1; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 600;
+}
+.attendance-day.present { background: var(--success-light); color: var(--success); }
+.attendance-day.absent { background: var(--danger-light); color: var(--danger); }
+.attendance-day.late { background: var(--warning-light); color: var(--warning); }
+.attendance-day.empty { background: transparent; }
+.attendance-day.header { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; }
+
+/* Progress Ring */
+.progress-ring-container {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.progress-ring { position: relative; width: 120px; height: 120px; }
+.progress-ring svg { transform: rotate(-90deg); }
+.progress-ring-bg { fill: none; stroke: var(--bg-tertiary); stroke-width: 8; }
+.progress-ring-fill { fill: none; stroke: url(#gradient); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+.progress-ring-text {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; font-size: 1.4rem; font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+/* Section Title Row */
+.section-title-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.section-title-row h2 { font-size: 1.15rem; }
+
+@media (max-width: 1024px) {
+  .sidebar-overlay { display: block; }
+  .quick-stats { grid-template-columns: repeat(2, 1fr); }
+  .mobile-header { display: flex; }
+}
+@media (max-width: 480px) {
+  .quick-stats { grid-template-columns: 1fr; }
+  .welcome-banner { padding: 24px 16px; }
+}

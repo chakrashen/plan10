@@ -1,0 +1,75 @@
+/* ===== Auth Pages (Login / Register) ===== */
+.auth-page {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; position: relative; overflow: hidden;
+  padding: 24px;
+}
+.auth-bg {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.auth-bg .hero-orb-1 {
+  position: absolute; width: 500px; height: 500px; top: -150px; right: -150px;
+  background: var(--accent-primary); border-radius: 50%;
+  filter: blur(120px); opacity: 0.3; animation: float 8s ease-in-out infinite;
+}
+.auth-bg .hero-orb-2 {
+  position: absolute; width: 400px; height: 400px; bottom: -100px; left: -100px;
+  background: var(--accent-secondary); border-radius: 50%;
+  filter: blur(120px); opacity: 0.3; animation: float 10s ease-in-out infinite reverse;
+}
+.auth-bg .hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--glass-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+  background-size: 60px 60px; opacity: 0.2;
+}
+.auth-container { position: relative; z-index: 1; width: 100%; max-width: 440px; }
+.auth-card { padding: 36px !important; }
+.auth-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 28px;
+}
+.auth-title { font-size: 1.6rem; margin-bottom: 6px; }
+.auth-subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; }
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+.auth-error {
+  padding: 10px 16px; border-radius: var(--radius-md);
+  background: var(--danger-light); color: var(--danger);
+  font-size: 0.85rem; font-weight: 500; margin-bottom: 8px;
+}
+.auth-footer-text {
+  text-align: center; font-size: 0.85rem; color: var(--text-secondary);
+  margin-top: 20px;
+}
+.auth-link { color: var(--accent-primary); font-weight: 600; }
+.auth-link:hover { text-decoration: underline; }
+
+/* Register Steps */
+.register-steps {
+  display: flex; justify-content: space-between;
+  margin-bottom: 24px; position: relative;
+}
+.register-steps::before {
+  content: ''; position: absolute; top: 14px; left: 30px; right: 30px;
+  height: 2px; background: var(--border-color); z-index: 0;
+}
+.step-item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  position: relative; z-index: 1;
+}
+.step-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--bg-tertiary); border: 2px solid var(--border-color);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+.step-item.active .step-dot {
+  background: var(--accent-primary); border-color: var(--accent-primary); color: #fff;
+}
+.step-item.done .step-dot {
+  background: var(--success); border-color: var(--success); color: #fff;
+}
+.step-item span { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+.step-item.active span { color: var(--accent-primary); }
