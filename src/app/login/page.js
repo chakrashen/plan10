@@ -77,7 +77,7 @@ export default function LoginPage() {
               <span className="logo-mark">P</span>
               <span className="logo-text">Plan10</span>
             </Link>
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" suppressHydrationWarning>
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
           </div>

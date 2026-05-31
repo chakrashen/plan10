@@ -36,7 +36,7 @@ export default function CoursesPage() {
         <div className="nav-container">
           <Link href="/" className="nav-logo"><span className="logo-mark">P</span><span className="logo-text">Plan10</span></Link>
           <div className="nav-actions">
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">{theme==='dark'?'☀️':'🌙'}</button>
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" suppressHydrationWarning>{theme==='dark'?'☀️':'🌙'}</button>
             <Link href="/login" className="btn btn-secondary btn-sm">Login</Link>
             <Link href="/register" className="btn btn-primary btn-sm">Get Started</Link>
           </div>

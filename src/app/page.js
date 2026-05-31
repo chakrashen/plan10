@@ -6,19 +6,19 @@ import './landing.css';
 
 /* ===== Dummy Data ===== */
 const COURSES = [
-  { id: 1, title: 'Full-Stack Web Development', desc: 'Master HTML, CSS, JavaScript, React, Node.js and build real-world projects.', category: 'Web Development', difficulty: 'Intermediate', duration: '12 Weeks', price: '₹14,999', image: '🌐', students: 342 },
-  { id: 2, title: 'Python & Data Science', desc: 'Learn Python, Pandas, Machine Learning and data visualization from scratch.', category: 'Data Science', difficulty: 'Beginner', duration: '10 Weeks', price: '₹12,999', image: '📊', students: 289 },
-  { id: 3, title: 'UI/UX Design Mastery', desc: 'Design stunning interfaces using Figma, Adobe XD with design thinking.', category: 'Design', difficulty: 'Beginner', duration: '8 Weeks', price: '₹9,999', image: '🎨', students: 198 },
-  { id: 4, title: 'Digital Marketing Pro', desc: 'SEO, social media marketing, Google Ads, and analytics for business growth.', category: 'Marketing', difficulty: 'Beginner', duration: '6 Weeks', price: '₹7,999', image: '📈', students: 456 },
-  { id: 5, title: 'Advanced React & Next.js', desc: 'Build production-grade apps with React 19, Next.js 15, and modern patterns.', category: 'Programming', difficulty: 'Advanced', duration: '8 Weeks', price: '₹11,999', image: '⚛️', students: 167 },
-  { id: 6, title: 'Mobile App Development', desc: 'Create cross-platform apps with React Native and deploy to App Store & Play Store.', category: 'Programming', difficulty: 'Intermediate', duration: '10 Weeks', price: '₹13,999', image: '📱', students: 223 },
+  { id: 1, title: 'Full-Stack Web Development', desc: 'Master HTML, CSS, JavaScript, React, Node.js and build real-world projects.', category: 'Web Development', difficulty: 'Intermediate', duration: '12 Weeks', price: '₹14,999', image: '/image1.webp', students: 342 },
+  { id: 2, title: 'Python & Data Science', desc: 'Learn Python, Pandas, Machine Learning and data visualization from scratch.', category: 'Data Science', difficulty: 'Beginner', duration: '10 Weeks', price: '₹12,999', image: '/image2.webp', students: 289 },
+  { id: 3, title: 'UI/UX Design Mastery', desc: 'Design stunning interfaces using Figma, Adobe XD with design thinking.', category: 'Design', difficulty: 'Beginner', duration: '8 Weeks', price: '₹9,999', image: '/image3.webp', students: 198 },
+  { id: 4, title: 'Digital Marketing Pro', desc: 'SEO, social media marketing, Google Ads, and analytics for business growth.', category: 'Marketing', difficulty: 'Beginner', duration: '6 Weeks', price: '₹7,999', image: '/image4.webp', students: 456 },
+  { id: 5, title: 'Advanced React & Next.js', desc: 'Build production-grade apps with React 19, Next.js 15, and modern patterns.', category: 'Programming', difficulty: 'Advanced', duration: '8 Weeks', price: '₹11,999', image: '/image5.webp', students: 167 },
+  { id: 6, title: 'Mobile App Development', desc: 'Create cross-platform apps with React Native and deploy to App Store & Play Store.', category: 'Programming', difficulty: 'Intermediate', duration: '10 Weeks', price: '₹13,999', image: '/image6.webp', students: 223 },
 ];
 
 const TEACHERS = [
-  { id: 1, name: 'Dr. Anika Sharma', role: 'Lead Instructor — Web Development', bio: '10+ years building scalable web applications at top tech companies.', specialization: 'React, Node.js, System Design', avatar: '👩‍💻' },
-  { id: 2, name: 'Prof. Rajesh Kumar', role: 'Senior Instructor — Data Science', bio: 'PhD in Machine Learning. Published 20+ research papers in AI.', specialization: 'Python, ML, Deep Learning', avatar: '👨‍🔬' },
-  { id: 3, name: 'Priya Mehta', role: 'Design Lead', bio: 'Former design lead at a Fortune 500. Passionate about user experience.', specialization: 'UI/UX, Figma, Design Systems', avatar: '👩‍🎨' },
-  { id: 4, name: 'Arjun Patel', role: 'Marketing Strategist', bio: '8 years of digital marketing experience. Helped 100+ businesses scale.', specialization: 'SEO, Google Ads, Analytics', avatar: '👨‍💼' },
+  { id: 1, name: 'Dr. Anika Sharma', role: 'Lead Instructor — Web Development', bio: '10+ years building scalable web applications at top tech companies.', specialization: 'React, Node.js, System Design', avatar: '/image13.webp' },
+  { id: 2, name: 'Prof. Rajesh Kumar', role: 'Senior Instructor — Data Science', bio: 'PhD in Machine Learning. Published 20+ research papers in AI.', specialization: 'Python, ML, Deep Learning', avatar: '/image14.webp' },
+  { id: 3, name: 'Priya Mehta', role: 'Design Lead', bio: 'Former design lead at a Fortune 500. Passionate about user experience.', specialization: 'UI/UX, Figma, Design Systems', avatar: '/iamge15.webp' },
+  { id: 4, name: 'Arjun Patel', role: 'Marketing Strategist', bio: '8 years of digital marketing experience. Helped 100+ businesses scale.', specialization: 'SEO, Google Ads, Analytics', avatar: '/image16.webp' },
 ];
 
 const TESTIMONIALS = [
@@ -28,17 +28,60 @@ const TESTIMONIALS = [
   { id: 4, name: 'Vikram Joshi', course: 'Digital Marketing Pro', text: 'I tripled my freelance income after completing the Digital Marketing course. The real-world case studies were game-changers.', rating: 4, avatar: '👨' },
 ];
 
+const TESTIMONIAL_BG_IMAGES = [
+  '/Screenshot 2026-05-31 153635.webp',
+  '/Screenshot 2026-05-31 153654.webp',
+  '/Screenshot 2026-05-31 153722.webp',
+  '/Screenshot 2026-05-31 153733.webp',
+];
+
 const STATS = [
-  { number: '1000+', label: 'Active Students', icon: '🎓' },
-  { number: '50+', label: 'Expert Courses', icon: '📚' },
-  { number: '25+', label: 'Top Instructors', icon: '👨‍🏫' },
-  { number: '95%', label: 'Success Rate', icon: '🏆' },
+  { number: '1000+', label: 'Active Students', icon: '/image7.webp' },
+  { number: '50+', label: 'Expert Courses', icon: '/image8.webp' },
+  { number: '25+', label: 'Top Instructors', icon: '/image9.webp' },
+  { number: '95%', label: 'Success Rate', icon: '/image10.webp' },
 ];
 
 export default function LandingPage() {
   const { theme, toggleTheme } = useTheme();
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [mobileNav, setMobileNav] = useState(false);
+  const [contactStatus, setContactStatus] = useState({ loading: false, success: null, error: null });
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contact-name')?.value;
+    const email = document.getElementById('contact-email')?.value;
+    const message = document.getElementById('contact-message')?.value;
+
+    if (!name || !email || !message) {
+      setContactStatus({ loading: false, success: false, error: 'Please fill in all fields.' });
+      return;
+    }
+
+    setContactStatus({ loading: true, success: null, error: null });
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setContactStatus({ loading: false, success: true, error: null });
+        if (document.getElementById('contact-name')) document.getElementById('contact-name').value = '';
+        if (document.getElementById('contact-email')) document.getElementById('contact-email').value = '';
+        if (document.getElementById('contact-message')) document.getElementById('contact-message').value = '';
+      } else {
+        setContactStatus({ loading: false, success: false, error: data.error || 'Something went wrong.' });
+      }
+    } catch (err) {
+      console.error(err);
+      setContactStatus({ loading: false, success: false, error: 'Failed to submit. Please try again.' });
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,7 +107,7 @@ export default function LandingPage() {
             <a href="#contact">Contact</a>
           </div>
           <div className="nav-actions">
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" suppressHydrationWarning>
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
             <Link href="/login" className="btn btn-secondary btn-sm">Login</Link>
@@ -84,6 +127,7 @@ export default function LandingPage() {
             loop
             muted
             playsInline
+            preload="none"
             className="hero-video"
             src="/background.mp4"
           />
@@ -126,9 +170,7 @@ export default function LandingPage() {
         <div className="stats-grid">
           {STATS.map((stat, i) => (
             <div key={i} className="stat-item">
-              <span className="stat-emoji">{stat.icon}</span>
-              <h3>{stat.number}</h3>
-              <p>{stat.label}</p>
+              <img src={stat.icon} alt={stat.label} className="stat-full-image" loading="lazy" />
             </div>
           ))}
         </div>
@@ -145,7 +187,9 @@ export default function LandingPage() {
           <div className="courses-grid">
             {COURSES.map((course) => (
               <div key={course.id} className="course-card glass-card">
-                <div className="course-emoji">{course.image}</div>
+                <div className="course-image-container">
+                  <img src={course.image} alt={course.title} className="course-image" loading="lazy" />
+                </div>
                 <div className="course-meta">
                   <span className="badge badge-accent">{course.category}</span>
                   <span className="badge badge-default">{course.difficulty}</span>
@@ -211,15 +255,11 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="about-visual">
-            <div className="about-card glass-card">
-              <div className="about-card-icon">🎓</div>
-              <h3>Our Mission</h3>
-              <p>To democratize quality education and empower every learner with skills that matter in the modern world.</p>
+            <div className="about-card">
+              <img src="/image11.webp" alt="Our Mission" className="about-full-image" loading="lazy" />
             </div>
-            <div className="about-card glass-card">
-              <div className="about-card-icon">🌟</div>
-              <h3>Our Vision</h3>
-              <p>To become the most trusted learning platform recognized for transforming lives through education.</p>
+            <div className="about-card">
+              <img src="/image12.webp" alt="Our Vision" className="about-full-image" loading="lazy" />
             </div>
           </div>
         </div>
@@ -236,7 +276,9 @@ export default function LandingPage() {
           <div className="teachers-grid">
             {TEACHERS.map((teacher) => (
               <div key={teacher.id} className="teacher-card glass-card">
-                <div className="teacher-avatar">{teacher.avatar}</div>
+                <div className="teacher-avatar-container">
+                  <img src={teacher.avatar} alt={teacher.name} className="teacher-image" loading="lazy" />
+                </div>
                 <h3>{teacher.name}</h3>
                 <p className="teacher-role">{teacher.role}</p>
                 <p className="teacher-bio">{teacher.bio}</p>
@@ -253,32 +295,25 @@ export default function LandingPage() {
 
       {/* ===== TESTIMONIALS ===== */}
       <section id="testimonials" className="section testimonials-section">
-        <div className="section-container">
-          <div className="section-header">
-            <span className="section-tag">Testimonials</span>
-            <h2>What Our Students Say</h2>
-            <p>Real stories from real students who transformed their careers.</p>
-          </div>
-          <div className="testimonial-carousel">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={t.id} className={`testimonial-card glass-card ${i === currentTestimonial ? 'active' : ''}`}>
-                <div className="testimonial-stars">
-                  {'★'.repeat(t.rating)}{'☆'.repeat(5 - t.rating)}
-                </div>
-                <p className="testimonial-text">&ldquo;{t.text}&rdquo;</p>
-                <div className="testimonial-author">
-                  <span className="testimonial-avatar">{t.avatar}</span>
-                  <div>
-                    <h4>{t.name}</h4>
-                    <p>{t.course}</p>
-                  </div>
-                </div>
-              </div>
+        <div className="testimonials-bg-slider">
+          <div 
+            className="testimonials-bg-track" 
+            style={{ transform: `translateX(-${currentTestimonial * 25}%)` }}
+          >
+            {TESTIMONIAL_BG_IMAGES.map((img, i) => (
+              <div 
+                key={i} 
+                className="testimonials-bg-slide"
+                style={{ backgroundImage: `url('${encodeURI(img)}')` }}
+              />
             ))}
           </div>
-          <div className="testimonial-dots">
+          <div className="testimonials-overlay"></div>
+        </div>
+        <div className="section-container" style={{ minHeight: '560px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center' }}>
+          <div className="testimonial-dots" style={{ zIndex: 10, marginBottom: '20px' }}>
             {TESTIMONIALS.map((_, i) => (
-              <button key={i} className={`dot ${i === currentTestimonial ? 'active' : ''}`} onClick={() => setCurrentTestimonial(i)} aria-label={`Testimonial ${i+1}`} />
+              <button key={i} className={`dot ${i === currentTestimonial ? 'active' : ''}`} onClick={() => setCurrentTestimonial(i)} aria-label={`Slide ${i+1}`} suppressHydrationWarning />
             ))}
           </div>
         </div>
@@ -323,20 +358,33 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            <form className="contact-form glass-card" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form glass-card" onSubmit={handleContactSubmit}>
               <div className="form-group">
                 <label htmlFor="contact-name">Full Name</label>
-                <input id="contact-name" className="input" placeholder="Your name" />
+                <input id="contact-name" className="input" placeholder="Your name" required suppressHydrationWarning />
               </div>
               <div className="form-group">
                 <label htmlFor="contact-email">Email</label>
-                <input id="contact-email" className="input" type="email" placeholder="your@email.com" />
+                <input id="contact-email" className="input" type="email" placeholder="your@email.com" required suppressHydrationWarning />
               </div>
               <div className="form-group">
                 <label htmlFor="contact-message">Message</label>
-                <textarea id="contact-message" className="input" placeholder="Your message..." rows={4}></textarea>
+                <textarea id="contact-message" className="input" placeholder="Your message..." rows={4} required suppressHydrationWarning></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{width: '100%'}}>Send Message →</button>
+              <button type="submit" className="btn btn-primary" style={{width: '100%'}} disabled={contactStatus.loading}>
+                {contactStatus.loading ? 'Sending...' : 'Send Message →'}
+              </button>
+              {contactStatus.success && (
+                <div style={{ color: '#10b981', fontSize: '0.88rem', textAlign: 'center', marginTop: '12px', background: 'rgba(16,185,129,0.1)', padding: '12px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                  <p style={{ fontWeight: '600' }}>✓ Message sent successfully!</p>
+                  <p style={{ fontSize: '0.8rem', opacity: 0.85, marginTop: '4px' }}>Your message has been received and synced to Google Sheets.</p>
+                </div>
+              )}
+              {contactStatus.error && (
+                <div style={{ color: '#ef4444', fontSize: '0.88rem', textAlign: 'center', marginTop: '12px', background: 'rgba(239,68,68,0.1)', padding: '8px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                  ✗ {contactStatus.error}
+                </div>
+              )}
             </form>
           </div>
         </div>
