@@ -79,6 +79,14 @@ export default function LandingPage() {
       {/* ===== HERO ===== */}
       <section className="hero">
         <div className="hero-bg">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video"
+            src="/background.mp4"
+          />
           <div className="hero-orb hero-orb-1"></div>
           <div className="hero-orb hero-orb-2"></div>
           <div className="hero-orb hero-orb-3"></div>
