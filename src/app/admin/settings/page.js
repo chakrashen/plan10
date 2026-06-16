@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import { useTheme } from '@/components/ThemeProvider';
 
 const KEYS = [
   { key: 'institute_name', label: 'Institute Name', type: 'text' },
@@ -15,6 +16,7 @@ const KEYS = [
 ];
 
 export default function AdminSettings() {
+  const { theme, toggleTheme } = useTheme();
   const [settings, setSettings] = useState({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -60,6 +62,31 @@ export default function AdminSettings() {
       </div>
 
       {msg && <div style={{ padding:'10px 16px',borderRadius:'var(--radius-md)',background:'var(--success-light)',color:'var(--success)',fontWeight:500,fontSize:'0.85rem',marginBottom:'16px' }}>{msg}</div>}
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginBottom: '24px' }}>
+        <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>Theme</span>
+        <button 
+          onClick={toggleTheme} 
+          suppressHydrationWarning
+          style={{
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--border-color)',
+            borderRadius: '50%',
+            width: '48px',
+            height: '48px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            color: 'var(--text-primary)'
+          }}
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
+      </div>
 
       <div className="card">
         <div className="auth-form">

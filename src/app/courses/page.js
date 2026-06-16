@@ -2,9 +2,17 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@/components/ThemeProvider';
-import { createClient } from '@/lib/supabase/client';
 import { formatCurrency } from '@/lib/utils';
 import './courses-public.css';
+
+const COURSES = [
+  { id: '1', title: 'Full-Stack Web Development', short_description: 'Master HTML, CSS, JavaScript, React, Node.js and build real-world projects.', category: 'Web Development', difficulty: 'Intermediate', duration_weeks: 12, price: 14999, image: '/image1.webp', teachers: {name: 'Dr. Anika Sharma'} },
+  { id: '2', title: 'Python & Data Science', short_description: 'Learn Python, Pandas, Machine Learning and data visualization from scratch.', category: 'Data Science', difficulty: 'Beginner', duration_weeks: 10, price: 12999, image: '/image2.webp', teachers: {name: 'Prof. Rajesh Kumar'} },
+  { id: '3', title: 'UI/UX Design Mastery', short_description: 'Design stunning interfaces using Figma, Adobe XD with design thinking.', category: 'Design', difficulty: 'Beginner', duration_weeks: 8, price: 9999, image: '/image3.webp', teachers: {name: 'Priya Mehta'} },
+  { id: '4', title: 'Digital Marketing Pro', short_description: 'SEO, social media marketing, Google Ads, and analytics for business growth.', category: 'Marketing', difficulty: 'Beginner', duration_weeks: 6, price: 7999, image: '/image4.webp', teachers: {name: 'Arjun Patel'} },
+  { id: '5', title: 'Advanced React & Next.js', short_description: 'Build production-grade apps with React 19, Next.js 15, and modern patterns.', category: 'Programming', difficulty: 'Advanced', duration_weeks: 8, price: 11999, image: '/image5.webp', teachers: {name: 'Dr. Anika Sharma'} },
+  { id: '6', title: 'Mobile App Development', short_description: 'Create cross-platform apps with React Native and deploy to App Store & Play Store.', category: 'Programming', difficulty: 'Intermediate', duration_weeks: 10, price: 13999, image: '/image6.webp', teachers: {name: 'Dr. Anika Sharma'} },
+];
 
 export default function CoursesPage() {
   const { theme, toggleTheme } = useTheme();
@@ -15,9 +23,7 @@ export default function CoursesPage() {
 
   useEffect(() => {
     async function load() {
-      const supabase = createClient();
-      const { data } = await supabase.from('courses').select('*, teachers(name)').eq('is_active', true).order('created_at', { ascending: false });
-      setCourses(data || []);
+      setCourses(COURSES);
       setLoading(false);
     }
     load();
@@ -69,7 +75,9 @@ export default function CoursesPage() {
           <div className="courses-grid" style={{gridTemplateColumns:'repeat(3,1fr)'}}>
             {filtered.map(c => (
               <Link key={c.id} href={`/courses/${c.id}`} className="course-card glass-card">
-                <div className="course-emoji" style={{fontSize:'2.5rem',marginBottom:'16px'}}>📘</div>
+                <div style={{height: '160px', borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: '16px'}}>
+                  <img src={c.image} alt={c.title} style={{width: '100%', height: '100%', objectFit: 'cover'}} loading="lazy" />
+                </div>
                 <div className="course-meta" style={{display:'flex',gap:'8px',marginBottom:'12px'}}>
                   <span className="badge badge-accent">{c.category}</span>
                   <span className="badge badge-default">{c.difficulty}</span>

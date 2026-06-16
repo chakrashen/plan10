@@ -47,6 +47,7 @@ export const NAV_STUDENT = [
   { label: 'Attendance', href: '/student/attendance', icon: 'attendance' },
   { label: 'Progress', href: '/student/progress', icon: 'progress' },
   { label: 'Profile', href: '/student/profile', icon: 'profile' },
+  { label: 'Settings', href: '/student/settings', icon: 'settings' },
 ];
 
 export const NAV_ADMIN = [

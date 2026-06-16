@@ -61,9 +61,6 @@ export default function AdminLayout({ children }) {
         </nav>
 
         <div className="sidebar-footer">
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" style={{width:'100%',justifyContent:'center',gap:'8px'}}>
-            {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
-          </button>
           <div className="sidebar-user">
             <div className="avatar">{getInitials(user?.full_name)}</div>
             <div className="sidebar-user-info">

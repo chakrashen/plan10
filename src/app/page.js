@@ -333,7 +333,7 @@ export default function LandingPage() {
                 <span>📍</span>
                 <div>
                   <h4>Address</h4>
-                  <p>123 Education Lane, Knowledge City, India 400001</p>
+                  <p>Pal Rd, Subhash Nagar, Jodhpur, Rajasthan 342008</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -347,7 +347,7 @@ export default function LandingPage() {
                 <span>📞</span>
                 <div>
                   <h4>Phone</h4>
-                  <p>+91 98765 43210</p>
+                  <p>9462703651, 7073783355</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -371,7 +371,7 @@ export default function LandingPage() {
                 <label htmlFor="contact-message">Message</label>
                 <textarea id="contact-message" className="input" placeholder="Your message..." rows={4} required suppressHydrationWarning></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{width: '100%'}} disabled={contactStatus.loading}>
+              <button type="submit" className="btn btn-primary" style={{width: '100%'}} disabled={contactStatus.loading} suppressHydrationWarning>
                 {contactStatus.loading ? 'Sending...' : 'Send Message →'}
               </button>
               {contactStatus.success && (
@@ -417,8 +417,8 @@ export default function LandingPage() {
             <div className="footer-links">
               <h4>Contact</h4>
               <a href="mailto:hello@plan10.edu">hello@plan10.edu</a>
-              <a href="tel:+919876543210">+91 98765 43210</a>
-              <p>Knowledge City, India</p>
+              <a href="tel:+919462703651">9462703651, 7073783355</a>
+              <p>Jodhpur, Rajasthan</p>
             </div>
           </div>
           <div className="footer-bottom">

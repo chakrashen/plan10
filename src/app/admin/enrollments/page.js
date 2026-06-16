@@ -55,14 +55,34 @@ export default function AdminEnrollments() {
         <button className="btn btn-primary" onClick={() => setShowModal(true)}>+ Enroll Student</button>
       </div>
 
-      {/* Filters */}
       <div className="tabs" style={{ marginBottom: '24px' }}>
-        {['all', 'pending', 'active', 'completed', 'rejected'].map(f => (
-          <button key={f} className={`tab ${filter === f ? 'active' : ''}`} onClick={() => setFilter(f)} style={{textTransform:'capitalize'}}>{f} ({f === 'all' ? enrollments.length : enrollments.filter(e => e.status === f).length})</button>
+        {['all', 'pending', 'active', 'completed', 'rejected', 'contact_requests'].map(f => (
+          <button key={f} className={`tab ${filter === f ? 'active' : ''}`} onClick={() => setFilter(f)} style={{textTransform:'capitalize'}}>
+            {f === 'contact_requests' ? 'Contact Requests' : `${f} (${f === 'all' ? enrollments.length : enrollments.filter(e => e.status === f).length})`}
+          </button>
         ))}
       </div>
 
-      {filtered.length === 0 ? (
+      {filter === 'contact_requests' ? (
+        <div className="card" style={{ height: '70vh', padding: 0, overflow: 'hidden' }}>
+          {process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL ? (
+            <iframe 
+              src={process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL} 
+              width="100%" 
+              height="100%" 
+              style={{ border: 'none' }}
+              title="Google Sheet Contact Requests"
+            />
+          ) : (
+            <div style={{ padding: '40px', textAlign: 'center' }}>
+              <h3>Google Sheet URL Not Configured</h3>
+              <p style={{ color: 'var(--text-muted)', marginTop: '8px' }}>
+                Please add <code>NEXT_PUBLIC_GOOGLE_SHEET_URL=your_sheet_url</code> to your <code>.env.local</code> file to view the contact requests here.
+              </p>
+            </div>
+          )}
+        </div>
+      ) : filtered.length === 0 ? (
         <div className="card empty-state"><div className="empty-icon">📝</div><h3>No Enrollments</h3></div>
       ) : (
         <div className="table-container">

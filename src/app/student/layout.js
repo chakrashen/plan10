@@ -9,7 +9,7 @@ import { getInitials } from '@/lib/utils';
 import './student.css';
 
 const ICONS = {
-  dashboard: '📊', courses: '📚', attendance: '📅', progress: '📈', profile: '👤',
+  dashboard: '📊', courses: '📚', attendance: '📅', progress: '📈', profile: '👤', settings: '⚙️',
 };
 
 export default function StudentLayout({ children }) {
@@ -69,9 +69,7 @@ export default function StudentLayout({ children }) {
         </nav>
 
         <div className="sidebar-footer">
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" style={{width: '100%', justifyContent: 'center', gap: '8px'}}>
-            {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
-          </button>
+
 
           <div className="sidebar-user">
             <div className="avatar">
